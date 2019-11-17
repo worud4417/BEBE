@@ -2,9 +2,11 @@ import React from "react";
 import {View,Text,StyleSheet} from "react-native";
 import {Input,Button} from 'react-native-elements';
 import Icon from 'react-native-vector-icons/Ionicons';
+import {connect} from 'react-redux'
 
 import {fetchLogin} from '../api/LoginApi';
 import color from '../resource/Color';
+import ActionCreator from '../action/Index';
 
 class LoginScreen extends React.Component{
     constructor(props){
@@ -17,8 +19,12 @@ class LoginScreen extends React.Component{
 
     async _onSubmit(){  
         let result = await fetchLogin(this.state.email,this.state.password);
-        if(result.status == 1){
+        if(result.message == "success"){
+            this.props.Login(result.user);
             this.props.navigation.navigate("Main");
+        }
+        else{
+            alert("아이디 혹은 비밀번호가 틀렸습니다.");
         }
     }
 
@@ -83,4 +89,18 @@ const styles = StyleSheet.create({
     }
 })
 
-export default LoginScreen
+function mapStateToProps(state){
+    return{
+        user : state.user
+    }
+}
+
+function mapDispatchToProps(dispatch){
+    return{
+        Login:(user)=>{
+            dispatch(ActionCreator.Login(user));
+        }
+    }
+}
+
+export default connect(mapStateToProps,mapDispatchToProps)(LoginScreen);

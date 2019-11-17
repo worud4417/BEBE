@@ -1,18 +1,21 @@
 import React from 'react';
 import {View,Text} from 'react-native';
 
-class MenuScreen extends React.Component{
+class DummyComponent extends React.Component{
     constructor(props){
         super(props);
+    }
+
+    componentDidMount(){
+        this.props.navigation.navigate("Main");
     }
 
     render(){
         return(
             <View>
-                <Text>CategoriesScreen</Text>
             </View>
         )
     }
 }
 
-export default MenuScreen;
+export default DummyComponent;
