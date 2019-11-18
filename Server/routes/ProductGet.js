@@ -3,6 +3,7 @@ var router = express.Router();
 
 const Product = require('../schema/ProductSchema');
 const message = require("../util/message");
+const web3 = require("../util/Web3");
 
 router.get('/', function (req, res, next) {
     Product.find({}, function (err, product) {
@@ -23,6 +24,14 @@ router.get('/best', function (req, res, next) {
         else {
             return res.status(200).send({message:message.success,product});
         }
+    })
+})
+
+router.get('/blockchain',function(req,res,next){
+    let manufacturer = req.query.MANUFACTURER;
+
+    web3.getRecord(manufacturer).then(function(result){
+        return res.status(200).send({message:message.success,result});
     })
 })
 

@@ -2,6 +2,7 @@ import React from 'react';
 import {View,Text,StyleSheet,FlatList,ScrollView,Image} from 'react-native';
 import {ListItem} from 'react-native-elements';
 import Icon from 'react-native-vector-icons/Ionicons';
+import {withNavigationFocus} from "react-navigation";
 
 import color from '../resource/Color';
 import {fetchGetAllProduct} from '../api/GetProductApi'; 
@@ -34,6 +35,18 @@ class ListScreen extends React.Component{
         }
         else{
             alert("에러")
+        }
+    }
+
+    async componentDidUpdate(prevProps){
+        if(!prevProps.isFoucused){
+            let result = await fetchGetAllProduct(this.props.navigation.getParam("categories"));
+            if(result.message == "success"){
+                this.setState({list:result});
+            }
+            else{
+                alert("에러")
+            }
         }
     }
 
@@ -73,4 +86,4 @@ styles = StyleSheet.create({
     }
 })
 
-export default ListScreen;
+export default withNavigationFocus(ListScreen);

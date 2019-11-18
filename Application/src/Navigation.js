@@ -17,6 +17,7 @@ import DetailScreen from './screen/DetailScreen';
 import ListScreen from './screen/ListScreen';
 import LogoutComponent from './component/LogoutComponent';
 import ProductRegistrationScreen from './screen/ProductRegistrationScreen';
+import BlockChainScreen from './screen/BlockChainScreen';
 
 const menuStackNavigator = createStackNavigator({
     Menu:{
@@ -27,6 +28,9 @@ const menuStackNavigator = createStackNavigator({
     },
     ProductRegistration:{
         screen:ProductRegistrationScreen
+    },
+    BlockChain:{
+        screen:BlockChainScreen
     }
 })
 

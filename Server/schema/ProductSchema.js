@@ -55,6 +55,8 @@ var productSchema = new Schema({
     },
     categories:{
         type:String
+
+        
     }
 });
 

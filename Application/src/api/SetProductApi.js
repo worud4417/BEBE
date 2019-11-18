@@ -30,6 +30,7 @@ export function fetchAddProduct(_manufacturer,_name,_year,_imagesource,_price){
 export function fetchAddProductAllInfo(
     _manufacturer,
     _name,
+    _year,
     _imagesource,
     _price,
     _imagewonsanji,

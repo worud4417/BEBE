@@ -14,6 +14,11 @@ const menuList = [
         name:"로그아웃",
         categories:"Logout",
         path:"Logout"
+    },
+    {
+        name:"블록체인 확인",
+        categories:"BlockChain",
+        path:"BlockChain"
     }
 ]
 

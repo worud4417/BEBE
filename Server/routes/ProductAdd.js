@@ -3,6 +3,7 @@ var router = express.Router();
 
 const Product = require('../schema/ProductSchema');
 const message = require("../util/message");
+const web3 = require('../util/Web3');
 
 router.post('/', function (req, res, next) {
 
@@ -16,7 +17,7 @@ router.post('/', function (req, res, next) {
 
     if (manufacturer == undefined || name == undefined || year == undefined
         || imagesource == undefined || price == undefined) {
-        return res.status(400).send({ message:message.duplicatedParam })
+        return res.status(400).send({ message:message.nullParam })
     }
     else {
         product.manufacturer = manufacturer;
@@ -32,13 +33,16 @@ router.post('/', function (req, res, next) {
         product.subtext4 = "";
         product.utong = "";
         product.certimage = "";
+        product.cartegories="";
 
         product.save(function (err) {
             if (err) {
                 return res.status(500).send({ message : message.serverError })
             }
             else {
-                return res.status(201).send({ message: message.success });
+                web3.setRecord(manufacturer,name,year,price).then(function(){
+                    return res.status(200).send({message:message.success});
+                })
             }
         })
     }
