@@ -2,7 +2,7 @@ var mongoose = require("mongoose");
 //mongodb plugin for primary key's auto increment
 var autoIncrement = require('mongoose-auto-increment');
 
-var connection = mongoose.createConnection("mongodb://localhost/main");
+var connection = mongoose.createConnection("mongodb://localhost/bebe");
 autoIncrement.initialize(connection);
 
 var Schema = mongoose.Schema;

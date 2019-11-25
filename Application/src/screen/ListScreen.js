@@ -39,7 +39,8 @@ class ListScreen extends React.Component{
     }
 
     async componentDidUpdate(prevProps){
-        if(!prevProps.isFoucused){
+        console.log(this.props.isFoucused);
+        if(!prevProps.isFoucused && this.props.isFoucused){
             let result = await fetchGetAllProduct(this.props.navigation.getParam("categories"));
             if(result.message == "success"){
                 this.setState({list:result});

@@ -9,6 +9,8 @@ router.post('/', function (req, res, next) {
 
     let product = new Product();
 
+    console.log(req);
+
     let manufacturer = req.body.MANUFACTURER;
     let name = req.body.NAME;
     let year = req.body.YEAR;

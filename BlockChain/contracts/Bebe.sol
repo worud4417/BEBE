@@ -47,12 +47,9 @@ contract Bebe is Ownable{
         uint256[] memory term3 = new uint256[](records.length);
         
         for(uint i =0;i<records.length;i++){
-            
-            
                 term1[i] = records[i].name;
                 term2[i] = records[i].year;
                 term3[i] = records[i].price;
-            
         }
         
         return (term1,term2,term3);
