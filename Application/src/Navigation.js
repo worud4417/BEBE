@@ -62,7 +62,7 @@ const bottomTabNavigator = createMaterialBottomTabNavigator({
     홈:{
         screen:mainStackNavigator,
         navigationOptions:{
-            tabBarColor:color.menu4,
+            tabBarColor:color.mainColor,
             tabBarIcon:({focused,horizontal,tintColor})=>{
                 return <Icon name="ios-home" size={25} color={tintColor}></Icon>
             }
@@ -71,7 +71,7 @@ const bottomTabNavigator = createMaterialBottomTabNavigator({
     카테고리:{
         screen:CategoriesStackNavigator,
         navigationOptions:{
-            tabBarColor:color.menu2,
+            tabBarColor:color.mainColor,
             tabBarIcon:({focused,horizontal,tintColor})=>{
                 return <Icon name="ios-search" size={25} color={tintColor}></Icon>
             }
@@ -80,7 +80,7 @@ const bottomTabNavigator = createMaterialBottomTabNavigator({
     마이:{
         screen:myStackNavigator,
         navigationOptions:{
-            tabBarColor:color.menu3,
+            tabBarColor:color.mainColor,
             tabBarIcon:({focused,horizontal,tintColor})=>{
                 return <Icon name="ios-person" size={25} color={tintColor}></Icon>
             }
@@ -89,7 +89,7 @@ const bottomTabNavigator = createMaterialBottomTabNavigator({
     더보기:{
         screen:menuStackNavigator,
         navigationOptions:{
-            tabBarColor:color.menu1,
+            tabBarColor:color.mainColor,
             tabBarIcon:({focused,horizontal,tintColor})=>{
                 return <Icon name="ios-reorder" size={25} color={tintColor}></Icon>
             }

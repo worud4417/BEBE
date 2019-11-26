@@ -1,30 +1,29 @@
 const Web3 = require("web3");
 const web3 = new Web3(Web3.givenProvider || "http://localhost:8545");
 
-//문자열을 십진수로 변환 - 완벽하진 않음
+//문자열을 십진수로 변환 
 //solidity의 uint는 십진수만 받음
-String.prototype.hexEncode = function(){
-    var hex, i;
+String.prototype.decEncode = function(){
+  var dec, i;
 
-    var result = "";
-    for (i=0; i<this.length; i++) {
-        hex = this.charCodeAt(i).toString(10);
-        result += ("000"+hex).slice(-4);
-    }
-
-    return result
+  var result = "";
+  for (i=0; i<this.length; i++) {
+      dec = this.charCodeAt(i).toString(10);
+      result += ("000"+dec).slice(-5);
+  }
+  return result
 }
 
-//십진수를 문자열로 변환 - 완벽하지 않음
-String.prototype.hexDecode = function(){
-    var j;
-    var hexes = this.match(/.{1,4}/g) || [];
-    var back = "";
-    for(j = 0; j<hexes.length; j++) {
-        back += String.fromCharCode(parseInt(hexes[j], 10));
-    }
+//십진수를 문자열로 변환 
+String.prototype.decDecode = function(){
+  var j;
+  var decs = this.match(/.{1,5}/g) || [];
+  var back = "";
+  for(j = 0; j<decs.length; j++) {
+      back += String.fromCharCode(parseInt(decs[j], 10));
+  }
 
-    return back;
+  return back;
 }
 
 //.sol 파일을 컴파일하고 블록체인에 deploy시 생성되는 ABI와 주소를 이용해 contract 인스턴스 생성
@@ -202,7 +201,7 @@ const contract = new web3.eth.Contract(
       "type": "function"
     }
   ],
-    "0x4133e547f717d6fdfce0e2fdb6af9a8a0d4909d9"
+    "0xe0ebd7775a96904ab81408692ff769b1af28ea52"
 );
 
 //deploy한 스마트컨트렉트 주인 계정주소
@@ -211,8 +210,8 @@ const address = "0x11eFBEA3618576a0815a24Cb341d5BcaD1Ca59Dc";
 //블록체인에 기록하는 스마트컨트렉트 함수 호출
 exports.setRecord = async function setRecord(_maunfacturer,_name,_year,_price){
   //문자열을 십진수로 변환
-    let maunfacturer = _maunfacturer.hexEncode();
-    let name = _name.hexEncode();
+    let maunfacturer = _maunfacturer.decEncode();
+    let name = _name.decEncode();
     //숫자로 확실하게 변환
     let year = Number.parseInt(_year);
     let price = Number.parseInt(_price);
@@ -227,7 +226,7 @@ exports.setRecord = async function setRecord(_maunfacturer,_name,_year,_price){
 //제조사 이름으로 확인
 exports.getRecord = async function getRecord(_maunfacturer){
   //제조사 이름을 십진수로 변환
-    let maunfacturer = _maunfacturer.hexEncode();
+    let maunfacturer = _maunfacturer.decEncode();
 
     //함수 호출(call) 블록체인의 기록 열람은 call이용
     let result = await contract.methods.getRecord(maunfacturer).call({from:address,gas:250000},function(error,response){
@@ -239,7 +238,7 @@ exports.getRecord = async function getRecord(_maunfacturer){
 
     //가져온 기록들을 이용하기 쉽게 배열로 재처리
     let recordArray = result[0].map(function(e,i){
-        return [e.hexDecode(),result[1][i],result[2][i]];
+        return [e.decDecode(),result[1][i],result[2][i]];
     });
 
     return recordArray;
