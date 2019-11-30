@@ -1,9 +1,26 @@
+/**
+ * main server
+ * @project BEBE
+ * @author LEE DONG HOON
+ * use REST api
+ * fort number is 3000
+ * http://(ipaddress):3000/userlogin
+ * User login router
+ */
+
 var express = require("express");
 var router = express.Router();
 
 var User = require('../schema/UserSchema');
 const message = require("../util/message");
 
+/**
+ * user login
+ * use POST
+ * use JSON
+ * @param ID is user's id
+ * @param PASSWORD is user's password
+ */
 router.post('/', function (req, res, next) {
     let id = req.body.ID;
     let password = req.body.PASSWORD;

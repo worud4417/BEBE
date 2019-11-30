@@ -1,7 +1,12 @@
+/**
+ * react-native application
+ * @project BEBE
+ * @author LEE DONG HOON
+ */
+
 import React from 'react';
-import {View,Text,StyleSheet,FlatList,ScrollView,Image,Dimensions} from 'react-native';
-import {ListItem,Button} from 'react-native-elements';
-import Icon from 'react-native-vector-icons/Ionicons';
+import {View,Text,StyleSheet,ScrollView,Image,Dimensions} from 'react-native';
+import {Button} from 'react-native-elements';
 import GestureRecognizer from 'react-native-swipe-gestures';
 
 import color from '../resource/Color';

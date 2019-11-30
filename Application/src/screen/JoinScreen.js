@@ -1,10 +1,15 @@
+/**
+ * react-native application
+ * @project BEBE
+ * @author LEE DONG HOON
+ */
+
 import React from 'react';
 import {KeyboardAvoidingView,Text,StyleSheet} from 'react-native';
 import {Input,Button} from 'react-native-elements';
 import color from '../resource/Color';
 
 import {fetchJoin} from '../api/JoinApi';
-import { ScrollView } from 'react-native-gesture-handler';
 
 class JoinScreen extends React.Component{
     constructor(props){

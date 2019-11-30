@@ -1,6 +1,12 @@
+/**
+ * react-native application
+ * @project BEBE
+ * @author LEE DONG HOON
+ */
+
 import React from 'react';
 import {View,Text,FlatList,ScrollView,StyleSheet} from 'react-native';
-import {Avatar,ListItem} from 'react-native-elements';
+import {Avatar} from 'react-native-elements';
 import Icon from 'react-native-vector-icons/Ionicons';
 import {connect} from 'react-redux'
 

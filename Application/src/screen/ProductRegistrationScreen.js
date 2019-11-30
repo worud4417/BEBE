@@ -1,3 +1,9 @@
+/**
+ * react-native application
+ * @project BEBE
+ * @author LEE DONG HOON
+ */
+
 import React from 'react';
 import {View,Text,StyleSheet,ScrollView,KeyboardAvoidingView} from 'react-native';
 import {ButtonGroup,Input,Button} from 'react-native-elements';

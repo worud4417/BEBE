@@ -1,3 +1,9 @@
+/**
+ * react-native application
+ * @project BEBE
+ * @author LEE DONG HOON
+ */
+
 const color = {
     mainColor : "#88B04B",
     facebookColor: "#3b5998",

@@ -1,3 +1,9 @@
+/**
+ * react-native application
+ * @project BEBE
+ * @author LEE DONG HOON
+ */
+
 import React from 'react';
 import AppContainer from './src/Navigation';
 import {Provider} from 'react-redux';

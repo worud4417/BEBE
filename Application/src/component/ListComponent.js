@@ -1,9 +1,13 @@
+/**
+ * react-native application
+ * @project BEBE
+ * @author LEE DONG HOON
+ */
+
 import React from 'react';
 import {View,StyleSheet} from 'react-native';
 import {ListItem} from 'react-native-elements';
 import Icon from 'react-native-vector-icons/Ionicons'; 
-
-import color from '../resource/Color';
 
 export default class ListComponent extends React.Component{
     constructor(props){

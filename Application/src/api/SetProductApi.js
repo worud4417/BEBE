@@ -1,3 +1,9 @@
+/**
+ * react-native application
+ * @project BEBE
+ * @author LEE DONG HOON
+ */
+
 import url from '../resource/IpAddress';
 
 export function fetchAddProduct(_manufacturer,_name,_year,_imagesource,_price){

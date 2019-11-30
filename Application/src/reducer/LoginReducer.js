@@ -1,3 +1,9 @@
+/**
+ * react-native application
+ * @project BEBE
+ * @author LEE DONG HOON
+ */
+
 import types from '../action/Types';
 
 let user = {

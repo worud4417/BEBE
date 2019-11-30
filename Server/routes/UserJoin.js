@@ -1,9 +1,29 @@
+/**
+ * main server
+ * @project BEBE
+ * @author LEE DONG HOON
+ * use REST api
+ * fort number is 3000
+ * http://(ipaddress):3000/userjoin
+ * user join router
+ */
+
 var express = require("express");
 var router = express.Router();
 
 const message = require("../util/message");
 const User = require('../schema/UserSchema');
 
+/**
+ * join user
+ * use POST
+ * use JSON
+ * @param ID is user's id
+ * @param PASSWORD is user's password
+ * @param NAME is user's name
+ * @param PHONENUMBER is user's phonenumber
+ * @param EMAIL is user's email
+ */
 router.post('/', function (req, res, next) {
 
     let user = new User();
@@ -14,6 +34,7 @@ router.post('/', function (req, res, next) {
     let phonenumber = req.body.PHONENUMBER;
     let email = req.body.EMAIL;
 
+    //check empty parameter
     if(id == undefined || password ==undefined || name == undefined || phonenumber == undefined || 
         email == undefined){
             return res.status(400).send({message : message.nullParam});

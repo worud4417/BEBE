@@ -1,3 +1,9 @@
+/**
+ * react-native application
+ * @project BEBE
+ * @author LEE DONG HOON
+ */
+
 import url from '../resource/IpAddress';
 
 export function fetchLogin(_email,_password){

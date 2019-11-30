@@ -1,5 +1,11 @@
-import React,{Component}  from 'react';
-import {View,Text,Image} from 'react-native';
+/**
+ * react-native application
+ * @project BEBE
+ * @author LEE DONG HOON
+ */
+
+import React  from 'react';
+import {View,Image} from 'react-native';
 import {Button} from 'react-native-elements';
 
 import color from '../resource/Color';

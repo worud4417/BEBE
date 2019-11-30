@@ -1,4 +1,15 @@
+/**
+ * main server
+ * @project BEBE
+ * @author LEE DONG HOON
+ * use REST api
+ * fort number is 3000
+ * http://(ipaddress):3000/
+ * WEB3.js wrapper module
+ */
+
 const Web3 = require("web3");
+//get eth provider * 8545 is ganache eth test tool's port number
 const web3 = new Web3(Web3.givenProvider || "http://localhost:8545");
 
 //문자열을 십진수로 변환 
@@ -201,6 +212,8 @@ const contract = new web3.eth.Contract(
       "type": "function"
     }
   ],
+
+  //eth deployed contract's address
     "0xe0ebd7775a96904ab81408692ff769b1af28ea52"
 );
 

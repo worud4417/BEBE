@@ -1,6 +1,11 @@
+/**
+ * react-native application
+ * @project BEBE
+ * @author LEE DONG HOON
+ */
+
 import React from 'react';
 import {View,Text,FlatList,ScrollView,StyleSheet} from 'react-native';
-
 import ListComponent from '../component/ListComponent';
 import color from '../resource/Color';
 

@@ -1,10 +1,31 @@
+/**
+ * main server
+ * @project BEBE
+ * @author LEE DONG HOON
+ * use REST api
+ * fort number is 3000
+ * http://(ipaddress):3000/
+ * product add router
+ */
+
 var express = require("express");
 var router = express.Router();
 
 const Product = require('../schema/ProductSchema');
 const message = require("../util/message");
+//use web3 module
 const web3 = require('../util/Web3');
 
+/**
+ * add product simple info 
+ * use POST
+ * use JSON
+ * @param MANUFACTURER is product's manufacturer name
+ * @param NAME is product's name
+ * @param YEAR is product's date of manufacture
+ * @param IMAGESOURCE is product's image uri
+ * @param PRICE is product's price
+ */
 router.post('/', function (req, res, next) {
 
     let product = new Product();
@@ -50,6 +71,25 @@ router.post('/', function (req, res, next) {
     }
 })
 
+/**
+ * add product all info 
+ * use POST
+ * use JSON
+ * @param MANUFACTURER is product's manufacturer name
+ * @param NAME is product's name
+ * @param YEAR is product's date of manufacture
+ * @param IMAGESOURCE is product's image uri
+ * @param PRICE is product's price
+ * @param IMAGEWONSANJI is product's origin image uri
+ * @param MAINTEXT is product's main description
+ * @param SUBTEXT1 is product's sub description
+ * @param SUBTEXT2 is product's sub description
+ * @param SUBTEXT3 is proudct's sub description
+ * @param SUBTEXT4 is product's sub description
+ * @param UTONG is product's circulation channels's image uri
+ * @param CERTIMAGE is product's certification's image uri
+ * @param CARTEGORIES is product's cartegories
+ */
 router.post('/fulladd',function(req,res,next){
     let product = new Product();
 

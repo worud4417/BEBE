@@ -1,7 +1,18 @@
+/**
+ * main server
+ * @project BEBE
+ * @author LEE DONG HOON
+ * use REST api
+ * fort number is 3000
+ * http://(ipaddress):3000/
+ * define product's mongodb schema
+ */
+
 var mongoose = require("mongoose");
 //mongodb plugin for primary key's auto increment
 var autoIncrement = require('mongoose-auto-increment');
 
+//set connection
 var connection = mongoose.createConnection("mongodb://localhost/bebe");
 autoIncrement.initialize(connection);
 

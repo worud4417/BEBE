@@ -1,3 +1,9 @@
+/**
+ * react-native application
+ * @project BEBE
+ * @author LEE DONG HOON
+ */
+
 import React from 'react';
 import {View,Text,FlatList,ScrollView} from 'react-native';
 import {Input,Button} from 'react-native-elements';

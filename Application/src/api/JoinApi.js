@@ -1,3 +1,9 @@
+/**
+ * react-native application
+ * @project BEBE
+ * @author LEE DONG HOON
+ */
+
 import url from '../resource/IpAddress';
 
 export function fetchJoin(_id,_password,_name,_callNumber,_email){

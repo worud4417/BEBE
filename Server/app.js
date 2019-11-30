@@ -1,3 +1,12 @@
+/**
+ * main server
+ * @project BEBE
+ * @author LEE DONG HOON
+ * use REST api
+ * fort number is 3000
+ * http://(ipaddress):3000/
+ */
+
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
@@ -21,6 +30,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+//set router path
 app.use('/userjoin', join)
 app.use('/userlogin', login)
 app.use('/productadd', add)

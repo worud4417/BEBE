@@ -1,3 +1,13 @@
+/**
+ * main server
+ * @project BEBE
+ * @author LEE DONG HOON
+ * use REST api
+ * fort number is 3000
+ * http://(ipaddress):3000/
+ * message module
+ */
+
 const message = {
     serverError : "server error",
     nullParam : "paramiter is null",
